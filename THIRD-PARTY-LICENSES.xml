@@ -1,0 +1,8 @@
+<licenses>
+  <license id="minimp3" component="minimp3 C# translation" spdx="CC0-1.0" source="Decode/Pcm/Mp3/Minimp3; https://github.com/lieff/minimp3" obligations="保留上游来源和 CC0 说明；同时保留本项目的修改记录。PCM32 已验证，Float32 未在实际环境验证。" />
+  <license id="minimal-internet-radio-reference" component="C# reference and adaptation" spdx="SEE-SOURCE" source="https://github.com/TxN/minimal-internet-radio" obligations="按参考项目源码中对应许可证、版权和免责声明执行。" />
+  <license id="pcm32-mit" component="PCM32 adapters" spdx="MIT" source="LICENSE.PCM32-MIT.txt" obligations="保留版权声明和许可文本。" />
+  <license id="sharpjaad-aac" component="SharpJaad AAC" spdx="MIT" source="Decode/Pcm/Aac/SharpJaadAac/LICENSE" obligations="保留原始版权和 MIT 文本。" />
+  <license id="opus-concentus" component="Opus/Concentus port" spdx="BSD-3-Clause" source="Decode/Pcm/Ogg/Ogg/OpusPort/LICENSE.libopus.txt" obligations="保留版权、条件、免责声明和专利许可说明。" />
+  <license id="ogg-vorbis-adapters" component="Ogg/Vorbis adapters" spdx="NO-THIRD-PARTY-LICENSE-DECLARED" source="Decode/Pcm/Ogg/Ogg" obligations="当前适配代码按项目源码维护；合并外部实现时必须补充来源和许可证。" />
+</licenses>

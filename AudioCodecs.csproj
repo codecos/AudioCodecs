@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net11.0-windows10.0.26100.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>13.0</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x64</PlatformTarget>
+    <Optimize>true</Optimize>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Support\*.cs" />
+    <Compile Include="Decode\Pcm\Mp3\**\*.cs" />
+    <Compile Include="Decode\Pcm\Aac\**\*.cs" />
+    <Compile Include="Decode\Pcm\Ogg\**\*.cs"
+             Exclude="Decode\Pcm\Ogg\Ogg\OggBenchmark.cs;Decode\Pcm\Ogg\Ogg\OpusPort\Concentus.Native\**\*.cs;Decode\Pcm\Ogg\Ogg\OpusPort\Concentus\OpusCodecFactory.cs;Decode\Pcm\Ogg\Ogg\OpusPort\Properties\AssemblyInfo.cs" />
+    <None Include="README.zh-CN.md" />
+    <None Include="THIRD-PARTY-LICENSES.xml" />
+  </ItemGroup>
+</Project>
