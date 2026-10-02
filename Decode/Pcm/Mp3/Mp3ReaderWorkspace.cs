@@ -1,5 +1,6 @@
 using System;
 using No_Glass_Player.PlayerHost.Playback;
+using Minimp3;
 
 namespace No_Glass_Player.AudioDecodeCore.Decode.Pcm.Mp3;
 
@@ -13,6 +14,7 @@ internal sealed class Mp3ReaderWorkspace : IDisposable
     private NativeBufferOwner<int>? _pcm32Stage;
     private NativeBufferOwner<int>? _pcm32Pending;
     private NativeBufferOwner<long>? _frameOffsets;
+    private mp3dec_ex_t? _decoder;
     private int _frameOffsetCount;
     private readonly PrefetchedReadWorkspace _prefetch = new();
 
@@ -24,6 +26,9 @@ internal sealed class Mp3ReaderWorkspace : IDisposable
     internal ReadOnlySpan<long> FrameOffsets
         => _frameOffsets is null ? ReadOnlySpan<long>.Empty : _frameOffsets.Span[.._frameOffsetCount];
     internal int FrameOffsetCount => _frameOffsetCount;
+
+    internal mp3dec_ex_t AcquireDecoder()
+        => _decoder ??= new mp3dec_ex_t();
     internal void ResetFrameOffsets()
     {
         _frameOffsetCount = 0;
@@ -54,6 +59,11 @@ internal sealed class Mp3ReaderWorkspace : IDisposable
     public void Dispose()
     {
         _frameOffsetCount = 0;
+        if (_decoder is not null)
+        {
+            minimp3_ex.mp3dec_ex_close(_decoder);
+            _decoder = null;
+        }
         DisposeOwner(ref _frameOffsets);
         _prefetch.Dispose();
         DisposeOwner(ref _pcm32Pending);

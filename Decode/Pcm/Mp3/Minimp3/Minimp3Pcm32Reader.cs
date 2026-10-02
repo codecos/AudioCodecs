@@ -100,7 +100,7 @@ internal sealed class Minimp3Pcm32Reader : IDisposable
                 }
             };
             var actualWorkspace = workspace ?? (ownedWorkspace = new Mp3ReaderWorkspace());
-            decoder = new mp3dec_ex_t();
+            decoder = actualWorkspace.AcquireDecoder();
             var result = minimp3_ex.mp3dec_ex_open_cb(decoder, io, minimp3_ex.MP3D_SEEK_TO_SAMPLE);
             if (result != 0)
             {
