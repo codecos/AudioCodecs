@@ -12,6 +12,7 @@
   <ItemGroup>
     <Compile Include="Support\*.cs" />
     <Compile Include="Decode\Pcm\Mp3\**\*.cs" />
+    <Compile Include="Decode\Pcm\Ape\**\*.cs" />
     <Compile Include="Decode\Pcm\Aac\**\*.cs" />
     <Compile Include="Decode\Pcm\Ogg\**\*.cs"
              Exclude="Decode\Pcm\Ogg\Ogg\OggBenchmark.cs;Decode\Pcm\Ogg\Ogg\OpusPort\Concentus.Native\**\*.cs;Decode\Pcm\Ogg\Ogg\OpusPort\Concentus\OpusCodecFactory.cs;Decode\Pcm\Ogg\Ogg\OpusPort\Properties\AssemblyInfo.cs" />

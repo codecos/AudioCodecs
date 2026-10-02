@@ -1,5 +1,7 @@
 # AudioCodecs
 
+Project repository: https://github.com/codecos/AudioCodecs
+
 AudioCodecs is a source-level C# audio decoder project for MP3, AAC, Ogg/Vorbis, and Opus. It does not load decoder DLLs and is intended to be usable from Native AOT applications.
 
 ## MP3
@@ -15,6 +17,7 @@ The MP3 implementation includes MPEG-1/2/2.5 Layer I/II/III decoding, frame scan
 - SharpJaad AAC: MIT; see [`Decode/Pcm/Aac/SharpJaadAac/LICENSE`](Decode/Pcm/Aac/SharpJaadAac/LICENSE).
 - Ogg/Vorbis: Ogg page and packet parsing with project PCM adapters. The format references are RFC 3533, RFC 5334, and the Vorbis I specification.
 - Opus/Concentus: BSD-3-Clause style terms and patent notices; see [`LICENSE.libopus.txt`](Decode/Pcm/Ogg/Ogg/OpusPort/LICENSE.libopus.txt).
+- APE: C# translation of the official Monkey's Audio source and format materials; see [`Decode/Pcm/Ape/README.md`](Decode/Pcm/Ape/README.md).
 - PCM32 adapters: project-owned MIT code; see [`LICENSE.PCM32-MIT.txt`](LICENSE.PCM32-MIT.txt).
 
 The complete source, license, modification, and validation notes are in [`LICENSES.zh-CN.md`](LICENSES.zh-CN.md). The machine-readable component index is [`THIRD-PARTY-LICENSES.xml`](THIRD-PARTY-LICENSES.xml).

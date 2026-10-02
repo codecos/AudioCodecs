@@ -9,6 +9,7 @@
 | minimp3 C# 移植 | `Decode/Pcm/Mp3/Minimp3` | `lieff/minimp3`：CC0 1.0；项目自有适配按 MIT 文件发布 | MPEG Audio Layer I/II/III | 保留上游来源、CC0 说明和本项目修改记录 |
 | PCM32 适配层 | `Decode/Pcm/Mp3`、`Decode/Pcm/Aac`、`Decode/Pcm/Ogg` 中的原创适配 | MIT，`LICENSE.PCM32-MIT.txt` | 项目内部 PCM32/Float32 契约 | 保留 MIT 文本 |
 | SharpJaad AAC | `Decode/Pcm/Aac/SharpJaadAac` | MIT | ISO/IEC 14496-3 | 保留目录中的 MIT 文本 |
+| APE | `Decode/Pcm/Ape` | 依据 Monkey's Audio 官方许可证和源码说明 | Monkey's Audio APE | 保留官方许可证、来源和 SDK 说明 |
 | Ogg/Vorbis | `Decode/Pcm/Ogg/Ogg` | 当前适配代码按项目源码维护；外部复制代码另行标注 | RFC 3533、RFC 5334、Vorbis I | 不能把规范当作代码许可证 |
 | Opus/Concentus | `Decode/Pcm/Ogg/Ogg/OpusPort` | BSD-3-Clause 风格，见 `LICENSE.libopus.txt` | RFC 6716、RFC 7845 | 保留版权、条件和免责声明 |
 
@@ -39,6 +40,12 @@
 4. 保留 SharpJaad 原始版权和 MIT 条款。
 
 AAC 代码没有经过本项目所有编码器和封装变体的完整验证。
+
+## APE / Monkey's Audio
+
+APE C# 解码器位于 `Decode/Pcm/Ape`，根据 Monkey's Audio 官方源码和格式资料翻译。官方许可证说明：[monkeysaudio.com/license.html](https://www.monkeysaudio.com/license.html)；官方开发者 SDK：[monkeysaudio.com/developers.html](https://www.monkeysaudio.com/developers.html)。
+
+实现保留官方 APE 帧布局、Range/Rice 位流、预测器、CRC、旧版格式分支和 seek 元数据模型，并接入项目的 PCM32 流式读取工作区。具体发布条件以官方许可证和随附源码说明为准。
 
 ## Ogg/Vorbis
 
