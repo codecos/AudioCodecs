@@ -10,7 +10,7 @@ The code in [`Decode/Pcm/Mp3/Minimp3`](Decode/Pcm/Mp3/Minimp3) is a C# translati
 
 The upstream minimp3 source is dedicated under CC0 1.0. The project keeps the upstream source record in [`README.upstream.md`](Decode/Pcm/Mp3/Minimp3/README.upstream.md) and [`LICENSE.minimp3.txt`](Decode/Pcm/Mp3/Minimp3/LICENSE.minimp3.txt).
 
-The MP3 implementation includes MPEG-1/2/2.5 Layer I/II/III decoding, frame scanning, bit reservoir, Huffman decoding, IMDCT, synthesis, seek, VBR metadata, SSE/AVX2 paths, and PCM32 output. PCM32 is the only output path validated in the actual playback environment. Float32 is present as an interface but has not been validated in the actual environment.
+The MP3 implementation includes MPEG-1/2/2.5 Layer I/II/III decoding, frame scanning, bit reservoir, Huffman decoding, IMDCT, synthesis, seek, VBR metadata, SSE paths, and PCM32 output. PCM32 is the only output path validated in the actual playback environment. Float32 is present as an interface but has not been validated in the actual environment.
 
 ## Other codecs
 
