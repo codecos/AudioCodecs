@@ -14,10 +14,10 @@ internal sealed class AacReaderWorkspace : IDisposable
     private NativeBufferOwner<int>? _stereoPcm32Output;
     private readonly AacContextCacheEntry[] _contexts = new AacContextCacheEntry[ContextCacheCapacity];
     private readonly AacDecodeInfoCacheEntry[] _decodeInfos = new AacDecodeInfoCacheEntry[DecodeInfoCacheCapacity];
-    private readonly PrefetchedReadWorkspace _prefetch = new();
+
     private long _useStamp;
 
-    internal PrefetchedReadWorkspace Prefetch => _prefetch;
+
     internal Span<byte> PacketBuffer => GetSpan(_packetBuffer, "AAC packet");
     internal Span<float> FloatOutput => GetSpan(_floatOutput, "AAC Float32 output");
     internal Span<int> Pcm32Output => GetSpan(_pcm32Output, "AAC PCM32 output");
@@ -141,7 +141,7 @@ internal sealed class AacReaderWorkspace : IDisposable
 
     public void Dispose()
     {
-        _prefetch.Dispose();
+
         for (var i = 0; i < _decodeInfos.Length; i++)
         {
             _decodeInfos[i].Dispose();

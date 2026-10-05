@@ -18,9 +18,7 @@ internal sealed class OggReaderWorkspace : IDisposable
     private readonly SetupCacheEntry[] _setupCache = new SetupCacheEntry[SetupCacheCapacity];
     private int _activeSetupIndex = -1;
     private int _setupUseClock;
-    private readonly PrefetchedReadWorkspace _prefetch = new();
 
-    internal PrefetchedReadWorkspace Prefetch => _prefetch;
     internal Span<byte> SegmentTable => GetSpan(_segmentTable, "OGG segment table");
     internal Span<byte> PagePayload => GetSpan(_pagePayload, "OGG page payload");
     internal Span<byte> PacketBuffer => GetSpan(_packetBuffer, "OGG packet");
@@ -140,7 +138,6 @@ internal sealed class OggReaderWorkspace : IDisposable
 
         _activeSetupIndex = -1;
         _setupUseClock = 0;
-        _prefetch.Dispose();
         DisposeOwner(ref _stereoPcm32Output);
         DisposeOwner(ref _pcm32SourceOutput);
         DisposeOwner(ref _floatOutput);

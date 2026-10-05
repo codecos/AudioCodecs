@@ -16,9 +16,7 @@ internal sealed class Mp3ReaderWorkspace : IDisposable
     private NativeBufferOwner<long>? _frameOffsets;
     private mp3dec_ex_t? _decoder;
     private int _frameOffsetCount;
-    private readonly PrefetchedReadWorkspace _prefetch = new();
 
-    internal PrefetchedReadWorkspace Prefetch => _prefetch;
     internal Span<float> FloatStage => GetSpan(_floatStage, "MP3 Float32 stage");
     internal Span<float> FloatPending => GetSpan(_floatPending, "MP3 Float32 pending");
     internal Span<int> Pcm32Stage => GetSpan(_pcm32Stage, "MP3 PCM32 stage");
@@ -65,7 +63,7 @@ internal sealed class Mp3ReaderWorkspace : IDisposable
             _decoder = null;
         }
         DisposeOwner(ref _frameOffsets);
-        _prefetch.Dispose();
+
         DisposeOwner(ref _pcm32Pending);
         DisposeOwner(ref _pcm32Stage);
         DisposeOwner(ref _floatPending);
